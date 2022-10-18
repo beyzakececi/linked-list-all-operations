@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//Beyza Kececi 210229001
+
 
 // A linked list node
 struct Node{
@@ -18,7 +18,7 @@ void push(struct Node** headRef,int newData){
 //insert a new node after the given node
 void insertAfter(struct Node* prevNode, int newData)
 {
-    //check if the given prevNode is NULL 
+    //check if the given prevNode is NULL
 	if (prevNode == NULL)
 	{
 		printf("the given previous node is NULL!!!");
@@ -49,26 +49,26 @@ void append(struct Node** headRef, int newData)
 		*headRef = newNode;
 		return;
 	}
-    
-    //travel till the last node 
+
+    //travel till the last node
 	while (last->next != NULL){
 		last = last->next;
 	}
-		
+
 	last->next = newNode;
 	return;
 }
 
 //Print reverse of a Linked List
  void revPrintList(struct Node *headRef){
- 	
+
     if (headRef == NULL)
        return;
- 
+
     revPrintList(headRef->next);
     printf(" %d ", headRef->data);
 }
-  
+
 //Print a linked list
 void printLinkedList(struct Node *node){
     while(node != NULL)
@@ -79,9 +79,9 @@ void printLinkedList(struct Node *node){
 }
  //Counts no. of nodes in linked list
 int lengthList(struct Node* headRef){
-	
+
 	int counter=0;
-	
+
     struct Node* tmp = headRef;
     while (tmp != NULL) {
         counter++;
@@ -132,29 +132,9 @@ void deleteAllNodes(struct Node *head)
 }
 
 int main(int argc, char *argv[]) {
-	
+
 	struct Node* head = NULL;
-	push(&head,23);
-    push(&head,27);
-    push(&head,27);
-    push(&head,30);
-    push(&head,30);
-    push(&head,220);
-    push(&head,220);
-    push(&head,30);
-    insertAfter(head->next,37);
-    append(&head,84);
-    printf("\n Created Linked list is: \n");
-    printLinkedList(head);
-    printf("\n Reversed Linked list is: \n");
-    revPrintList(head);
-    lengthList(head);
-    printf("Before delete duplicate nodes: \n");
-    printLinkedList(head);
-    printf("\n");
-    deleteAllNodes(head);
-    printf("\n");
-    printLinkedList(head);
-	
+
+
 	return 0;
 }
